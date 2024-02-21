@@ -1,0 +1,203 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #052745;
+  color: #fff;
+  font-family: "Dosis", sans-serif;
+}
+.alarm {
+  background: #023662;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 70%;
+  /* overflow: scroll; */
+}
+.alarm .fix {
+  position: sticky;
+  top: 0;
+}
+.heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 35px;
+  font-size: 25px;
+  background: #052d50;
+}
+.heading i {
+  cursor: pointer;
+}
+.main {
+  position: relative;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 35px;
+  background: #052d50;
+  z-index: 999;
+  height: 100px;
+}
+.main .alarmForm {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* background: red; */
+}
+.main .alarmForm > * {
+  height: 30px;
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.main .alarmForm > button {
+  color: #fff;
+  background: none;
+  border: 1px solid #38c2fe;
+  transition: all 0.3s ease;
+}
+.main .alarmForm > button:hover {
+  background: #38c2fe;
+  color: #052d50;
+  border: 1px solid #38c2fe;
+}
+
+.main h1 {
+  margin: 0;
+  margin-bottom: 7px;
+}
+.main p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.seperator {
+  height: 30px;
+  width: 100%;
+  position: relative;
+}
+.addBtn {
+  position: absolute;
+  background: #38c2fe;
+  z-index: 999;
+  top: 30%;
+  transform: translateY(-50%);
+  right: 20px;
+  font-size: 45px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+.seperator::after {
+  position: absolute;
+  height: 30px;
+  content: "";
+  width: 100%;
+  left: 0;
+  clip-path: polygon(100% 0, 0 0, 0 100%);
+  z-index: 99;
+  margin-bottom: 50px;
+  background: #052d50;
+}
+.seperator::before {
+  content: "";
+  height: 30px;
+  background: #023662;
+  position: absolute;
+  width: 100%;
+  top: 0%;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  z-index: 99;
+}
+
+.AlreadySetAlarms {
+  background: #023662;
+  height: 300px;
+  padding: 30px;
+  padding-top: 55px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+.AlreadySetAlarms::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+.AlreadySetAlarms::-webkit-scrollbar {
+  width: 12px;
+  background-color: #023662;
+}
+
+.AlreadySetAlarms::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #052d50;
+}
+.AlreadySetAlarms .oneAlarm {
+  margin-bottom: 50px;
+  opacity: 0.6;
+}
+.AlreadySetAlarms .oneAlarm.on {
+  opacity: 1;
+}
+
+.alarmDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alarmDetails .toggleBtn {
+  height: 5px;
+  width: 40px;
+  background: #012b50;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+.alarmDetails .toggleBtn::before {
+  content: "";
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  position: absolute;
+  background: #002549;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.4s ease;
+}
+.alarmDetails .on::before {
+  left: calc(100% - 25px);
+  background: #38c2fe;
+}
+.days {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+}
+.days > span {
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: grey;
+  text-transform: capitalize;
+}
+.days > span.alarmDay {
+  color: #fff;
+}
